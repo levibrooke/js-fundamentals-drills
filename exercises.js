@@ -205,21 +205,21 @@ var lengthOfLast = function(arr) {
  * @param {Array}
  * @return {Number}
  */
+
+
 var sumBelowTen = function(arr) {
 
-  function sum(a, b) {
-    return a + b;
-  }
-  var newArray = [];
-
-  for (var i = 0; i < arr.length; i++) {
-
-    while (arr[i] < 10) {
-
-      newArray.push(arr[i]);
-    }
-  }
-  return newArray.reduce(sum);
+  // var total = 0;
+  //
+  // for (var i = 0; i < arr.length; i++) {
+  //
+  //   while (arr[i] < 10) {
+  //
+  //     total += arr[i];
+  //
+  //   }
+  // }
+  // return total;
 };
 
 /* #moreThanTenLetters
@@ -229,7 +229,19 @@ var sumBelowTen = function(arr) {
  * @param {String}
  * @return {Number}
  */
-var moreThanTenLetters;
+var moreThanTenLetters = function(str) {
+
+  var number = 0;
+
+  for (var i = 0; i < str.length; i++) {
+
+    while (str[i].length > 10) {
+
+      return number + 1;
+    }
+  }
+  return number;
+};
 
 /* #multiplyAll
  *
@@ -238,7 +250,15 @@ var moreThanTenLetters;
  * @param {Array}
  * @return {Number}
  */
-var multiplyAll;
+var multiplyAll = function(arr) {
+
+  var num = 1;
+
+  for (var i = 0; i < arr.length; i++) {
+    num *= arr[i];
+  }
+  return num;
+};
 
 /* #getKeys
  *
@@ -247,7 +267,11 @@ var multiplyAll;
  * @param {Object}
  * @return {Array}
  */
-var getKeys;
+var getKeys = function(obj) {
+
+  return Object.keys(obj);
+
+};
 
 /* #sumAllPositive
  *
@@ -256,7 +280,18 @@ var getKeys;
  * @param {String}
  * @return {Number}
  */
-var sumAllPositive;
+var sumAllPositive = function(arr) {
+
+  var sum = 0;
+
+  for (var i = 0; i < arr.length; i++) {
+
+    if (arr[i] >= 0) {
+      sum += arr[i];
+    }
+  }
+  return sum;
+};
 
 /* #stringCountBelowThree
  *
@@ -437,7 +472,16 @@ var arrayToObjectNums;
  * @param {String}
  * @return {Object}
  */
-var stringToKeys;
+var stringToKeys = function(str) {
+
+  var newObject = {};
+  var newArray = str.split("");
+
+  for (var i = 0; i < newArray.length; i++) {
+    newObject[newArray[i]] = true;
+  }
+  return newObject;
+};
 
 /* #charCountMap
  *
@@ -484,10 +528,10 @@ module.exports = {
   splitString: splitString,
   lengthOfLast: lengthOfLast,
   sumBelowTen: sumBelowTen,
-  moreThanTenLetters: null,
-  multiplyAll: null,
-  getKeys: null,
-  sumAllPositive: null,
+  moreThanTenLetters: moreThanTenLetters,
+  multiplyAll: multiplyAll,
+  getKeys: getKeys,
+  sumAllPositive: sumAllPositive,
   stringCountBelowThree: null,
   countObjects: null,
   getObjectKeys: null,
@@ -498,7 +542,6 @@ module.exports = {
   tupleToObjectReverse: null,
   strToKeys: null,
   getValues: null,
-  getKeys: null,
   objectToArray: null,
   arrayToObject: null,
   arraysToObject: null,
@@ -506,7 +549,7 @@ module.exports = {
   mapArrayValues: null,
   mapStringCounts: null,
   arrayToObjectNums: null,
-  stringToKeys: null,
+  stringToKeys: stringToKeys,
   charCountMap: null,
   frequencyMap: null,
   tupleConvertToObject: null

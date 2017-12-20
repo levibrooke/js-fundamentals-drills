@@ -209,17 +209,17 @@ var lengthOfLast = function(arr) {
 
 var sumBelowTen = function(arr) {
 
-  // var total = 0;
-  //
-  // for (var i = 0; i < arr.length; i++) {
-  //
-  //   while (arr[i] < 10) {
-  //
-  //     total += arr[i];
-  //
-  //   }
-  // }
-  // return total;
+  var total = 0;
+
+  for (var i = 0; i < arr.length; i++) {
+
+    if (arr[i] < 10) {
+
+      total += arr[i];
+
+    }
+  }
+  return total;
 };
 
 /* #moreThanTenLetters
@@ -300,7 +300,18 @@ var sumAllPositive = function(arr) {
  * @param {Array}
  * @return {Number}
  */
-var stringCountBelowThree;
+var stringCountBelowThree = function(arr) {
+
+  var num = 0;
+
+  for (var i = 0; i < arr.length; i++) {
+
+    if (arr[i].length <= 3) {
+      num = num + 1;
+    }
+  }
+  return num;
+};
 
 /* #countObjects
  *
@@ -309,7 +320,9 @@ var stringCountBelowThree;
  * @param {Array}
  * @return {Number}
  */
-var countObjects;
+var countObjects = function(arr) {
+  return arr.length;
+};
 
 /* #getObjectKeys
  *
@@ -318,7 +331,9 @@ var countObjects;
  * @param {Object}
  * @return {Array}
  */
-var getObjectKeys;
+var getObjectKeys = function(obj) {
+  return Object.keys(obj);
+};
 
 /* #getObjectValues
  *
@@ -327,7 +342,9 @@ var getObjectKeys;
  * @param {Object}
  * @return {Array}
  */
-var getObjectValues;
+var getObjectValues = function(obj) {
+  return Object.values(obj);
+};
 
 /* #makeObject
  *
@@ -337,7 +354,13 @@ var getObjectValues;
  * @param {String}
  * @return {Object}
  */
-var makeObject;
+var makeObject = function(key, value) {
+  var newObject = {};
+
+  newObject[key] = value;
+
+  return newObject;
+};
 
 /* #makeObjectReverse
  *
@@ -347,7 +370,13 @@ var makeObject;
  * @param {String}
  * @return {Bool}
  */
-var makeObjectReverse;
+var makeObjectReverse = function(value, key) {
+  var newObject = {};
+
+  newObject[key] = value;
+
+  return newObject;
+};
 
 /* #tupleToObject
  *
@@ -356,7 +385,13 @@ var makeObjectReverse;
  * @param {Array}
  * @return {Object}
  */
-var tupleToObject;
+var tupleToObject = function(arr) {
+  var newObject = {};
+
+  newObject[arr[0]] = arr[1];
+
+  return newObject;
+};
 
 /* #tupleToObjectReverse
  *
@@ -365,7 +400,13 @@ var tupleToObject;
  * @param {Array}
  * @return {Object}
  */
-var tupleToObjectReverse;
+var tupleToObjectReverse = function(arr) {
+  var newObject = {};
+
+  newObject[arr[1]] = arr[0];
+
+  return newObject;
+};
 
 /* #strToKeys
  *
@@ -374,7 +415,9 @@ var tupleToObjectReverse;
  * @param {Array}
  * @return {Object}
  */
-var strToKeys;
+var strToKeys = function(arr) {
+  
+};
 
 /* #getValues
  *
@@ -532,14 +575,14 @@ module.exports = {
   multiplyAll: multiplyAll,
   getKeys: getKeys,
   sumAllPositive: sumAllPositive,
-  stringCountBelowThree: null,
-  countObjects: null,
-  getObjectKeys: null,
-  getObjectValues: null,
-  makeObject: null,
-  makeObjectReverse: null,
-  tupleToObject: null,
-  tupleToObjectReverse: null,
+  stringCountBelowThree: stringCountBelowThree,
+  countObjects: countObjects,
+  getObjectKeys: getObjectKeys,
+  getObjectValues: getObjectValues,
+  makeObject: makeObject,
+  makeObjectReverse: makeObjectReverse,
+  tupleToObject: tupleToObject,
+  tupleToObjectReverse: tupleToObject,
   strToKeys: null,
   getValues: null,
   objectToArray: null,
